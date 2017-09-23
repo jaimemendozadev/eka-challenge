@@ -25,13 +25,18 @@ Please make sure to read through the ENTIRE wall of text below before proceeding
 
 The basic workflow is:
 1.  When the User requests the homepage, the user is taken to a generic landing page. On the landing page, there should be a button that redirects the user to the FIRST form of the onboarding process.
+
 2.  There should be a total of 3 forms in the onboarding process. For reference, we'll refer to these 3 forms as Form1, Form2, and Form3.
+
 3.  Each form will collect a specific set of information:
   * Form1 will collect username, password, and e-mail address.
   * Form2 will collect first name, last name, and telephone number.
   * Form3 will collect address (street address, city, state, zip).
+
 4.  At the bottom of each form should be a SAVE button that saves the information that the user just entered.
+
 5.  When the user clicks on the SAVE button on each form (Form1, Form2, Form3), it should send a request to your API/server that saves that user's information into the PostgreSQL DB that it is hooked up to.
+
 6.  When the user clicks on the SAVE button on each form, it should take them to the next form in the series.
   * eg. User fills out Form1 and clicks save. Info should be saved in DB and user is then taken to Form2.
   * eg. User fills out Form3 (last in the series) and clicks save. Info should be saved in DB and User is then taken back to the landing page.
