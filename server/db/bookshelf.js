@@ -1,3 +1,8 @@
+require('dotenv').config();
+const config = require('../../knexfile')[process.env.NODE_ENV];
+const knex = require('knex')(config);
+
+/*
 const knex = require('knex')({
     client: 'pg',
     connection: {
@@ -9,6 +14,9 @@ const knex = require('knex')({
     }
   });
 
+*/
 const bookshelf = require('bookshelf')(knex);
+bookshelf.plugin('registry');
+
 console.log("bookshelf instance is ", bookshelf)
 module.exports = bookshelf;
