@@ -1,9 +1,11 @@
 require('dotenv').config();
-const app = require('express')();
+const express = require('express');
+const app = express();
+const path = require('path');
 
-app.use('/', (req, res)=>{
-  res.send("<h1>Hit the api bro!</h1>");
-});
+
+app.use(express.static(path.resolve(__dirname, '../public')));
+
 
 const port = process.env.PORT || 3000;
 
