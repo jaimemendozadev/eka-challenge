@@ -6,12 +6,12 @@ const bodyParser = require('body-parser');
 const router = require('./router');
 
 app.use(express.static(path.resolve(__dirname, '../public')));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+
 
 app.use('/api', router);
 
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 
 const port = process.env.PORT || 3000;
 
