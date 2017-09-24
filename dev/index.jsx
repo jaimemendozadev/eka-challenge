@@ -1,6 +1,13 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import {Button} from 'react-bootstrap';
+import rootReducer from './reducers';
+
+import {applyMiddleware, createStore} from 'redux';
+import {Provider} from 'react-redux';
+
+const createStoreWithMiddleware = applyMiddleware()(createStore);
+
 
 class App extends Component {
   constructor(props){
@@ -20,4 +27,9 @@ class App extends Component {
   }
 }
 
-ReactDOM.render(<App />, document.querySelector('.app'));
+ReactDOM.render(
+  <Provider store={createStoreWithMiddleware(rootReducer)}>
+    <App />
+  </Provider>
+
+, document.querySelector('.app'));
