@@ -2,7 +2,7 @@ const router = require('express').Router();
 const User = require('../db/models/user.js');
 
 router.get('/', (req, res) => {
-  res.send("<h1>Hit the API Bro!</h1>");
+  res.status(200).send("hit the api");
 });
 
 router.post('/form/:num', (req, res) => {
